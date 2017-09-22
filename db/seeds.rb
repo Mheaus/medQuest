@@ -35,25 +35,29 @@ User.create!(
 puts 'lets create badges'
 
 Badge.create!(
-  title: 'Le gastronome'
+  name: 'Le gastronome'
 )
 
 Badge.create!(
-  title: 'Le débutant'
+  name: 'Le débutant'
 )
 
 Badge.create!(
-  title: 'Le randonneur'
+  name: 'Le randonneur'
 )
 
 Badge.create!(
-  title: 'Le cycliste'
+  name: 'Le cycliste'
 )
 
 Badge.create!(
-  title: 'Familial'
+  name: 'Familial'
 )
 
 Badge.create!(
-  title: 'Découverte'
+  name: 'Découverte'
+)
+
+Userbadge.create!(
+  user_id:@
 )
