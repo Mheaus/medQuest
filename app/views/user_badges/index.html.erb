@@ -1,18 +1,25 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 text-center mb-5 mt-3">
-      <h1><%= current_user.email %></h1>
+<div class="container-fluid" id="userbadge-index">
+  <div class="row" id="header-background">
+    <div class="col-12 mb-5 mt-3">
+      <h1 id="title">RiberaQuest</h1>
+      <p id="username"><%= current_user.email %></p>
     </div>
   </div>
 
   <div class="row" id="badges-cards">
     <div class="col-12">
-      <p>badges :</p>
+      <p>vos badges :</p>
     </div>
     <% @userbadges.each do |userbadge| %>
       <div class="col-12 d-flex mb-3 justify-content-between badge-card">
-        <p class="badge-card-name"><%= userbadge.badge.name %></p>
-        <%= render 'icon_container' %>
+        <div class="d-flex flex-column justify-content-end mb-3">
+          <p class="badge-card-name"><%= userbadge.badge.name %></p>
+          <span class="progression">taux de progression * / *</span>
+        </div>
+
+        <% progressionRequested = ((userbadge.user_objectives.count / Badge.find(userbadge.badge_id).objectives.count.to_f).round(2)) %>
+        <%= render 'icon_container', value: userbadge.badge.id, progression: progressionRequested %>
+
         <%= link_to "", user_badge_path(userbadge), class: "badge-card-show-link" %>
       </div>
     <% end %>

@@ -7,11 +7,12 @@
 .accordion-toggle {
   margin-top: 0.5rem; /* 8/16 */
   margin-bottom: 0rem;
-  padding: 1.5rem;
+  padding: 0.75rem;
+  border-radius: 2px;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: $orange;
-  color: #fff;
+  background-color: #EEF7E3;
+  color: black;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -21,7 +22,8 @@
 .accordion-content {
   display: none;
   background-color: #fff;
-  border-left: 2px solid  $orange;
+  border-radius: 2px;
+  border-left: 2px solid  #EEF7E3;
   padding: 1.25rem; /* 20/16 */
 }
 
@@ -30,6 +32,18 @@
   margin-right: 5%;
 }
 
-.badge-name {
+.objective-undone {
+  display: flex;
+  font-size: 3.125rem; /* 50/16 */
+  color: white;
+}
 
+.objective-done {
+  display: flex;
+  font-size: 3.125rem; /* 50/16 */
+  color: $yellow !important;
+}
+
+.badge-name {
+  color: #EEF7E3;
 }
