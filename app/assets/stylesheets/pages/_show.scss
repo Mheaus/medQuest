@@ -15,6 +15,9 @@
 }
 
 .accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 0.5rem; /* 8/16 */
   margin-bottom: 0rem;
   padding: 0.75rem;
@@ -51,7 +54,7 @@
 .objective-done {
   display: flex;
   font-size: 3.125rem; /* 50/16 */
-  color: $yellow !important;
+  color: $yellow;
 }
 
 .badge-name {
