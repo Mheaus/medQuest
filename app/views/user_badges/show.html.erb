@@ -1,22 +1,24 @@
+<div class="wrapper">
+  <h1 class='badge-name text-center'><%= @userbadge.badge.name %></h1>
 
-<h1 class='badge-name text-center'><%= @userbadge.badge.name.upcase %></h1>
 
 
-
-  <div id="main">
-    <% @userbadge.badge.objectives.each do |objective| %>
-    <div class="objective">
-      <div class="accordion">
-        <p class="objective-name"><%= objective.name  %></p>
+    <div id="main">
+      <% @userbadge.badge.objectives.each do |objective| %>
+      <div class="objective">
+        <div class="accordion">
+          <p class="objective-name"><%= objective.name  %></p>
+          <i class='fa fa-check-circle-o objective-done'></i>
+          <!-- class undone for undone css -->
+        </div>
+        <div class='content'>
+          <p> <%= objective.description  %></p>
+          <button type="button" class="btn btn-info">J'ai réalisé ce défi !</button>
+        </div>
       </div>
-      <div class='content'>
-        <p> <%= objective.description  %></p>
-        <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
-      </div>
+      <% end %>
     </div>
-    <% end %>
-  </div>
-
+</div>
 
 <script>
 
