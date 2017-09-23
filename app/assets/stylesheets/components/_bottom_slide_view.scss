@@ -1,0 +1,36 @@
+.bottom-view {
+  background: $green;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: height ease-out .4s;
+  &.expanded::before {
+    display: none;
+  }
+  &-container {
+    margin-top: 50px;
+  }
+}
+
+.expanded {
+  height: 100%;
+}
+
+.bottom-view::before {
+  content: "+";
+  background: $green;
+  color: white;
+  font-size: 23px;
+  width: 46px;
+  height: 34px;
+  border-radius: 15%;
+  position: absolute;
+  top: -15px;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
