@@ -1,4 +1,22 @@
-<h1>Bienvenue à Ribérac !</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 text-center mb-5 mt-3">
+      <h1><%= current_user.email %></h1>
+    </div>
+  </div>
 
-<%= render 'icon_container' %>
+  <div class="row" id="badges-cards">
+    <div class="col-12">
+      <p>badges :</p>
+    </div>
+    <% @userbadges.each do |userbadge| %>
+      <div class="col-12 d-flex mb-3 justify-content-between badge-card">
+        <p class="badge-card-name"><%= userbadge.badge.name %></p>
+        <%= render 'icon_container' %>
+        <%= link_to "", user_badge_path(userbadge), class: "badge-card-show-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 <%= render 'bottom_slide_view' %>
+
