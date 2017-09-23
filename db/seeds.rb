@@ -62,9 +62,33 @@ Objective.create!(
   description: "Visiter le fameux marché nocture de la Roche Chalais ou l'estival gourmande de Saint Aulaye",
 )
 
+Objective.create!(
+  badge: Badge.second,
+  name: "Marché festifs",
+  description: "Visiter le fameux marché nocture de la Roche Chalais ou l'estival gourmande de Saint Aulaye",
+)
+Objective.create!(
+  badge: Badge.third,
+  name: "Marché festifs",
+  description: "Visiter le fameux marché nocture de la Roche Chalais ou l'estival gourmande de Saint Aulaye",
+)
+Objective.create!(
+  badge: Badge.third,
+  name: "Marché festifs",
+  description: "Visiter le fameux marché nocture de la Roche Chalais ou l'estival gourmande de Saint Aulaye",
+)
+
 puts 'and now userobjectives'
 
 UserObjective.create!(
   user_badge: UserBadge.first,
   objective: Objective.first,
+)
+UserObjective.create!(
+  user_badge: UserBadge.second,
+  objective: Objective.second,
+)
+UserObjective.create!(
+  user_badge: UserBadge.third,
+  objective: Objective.third,
 )
