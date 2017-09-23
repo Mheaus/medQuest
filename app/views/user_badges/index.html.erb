@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 text-center mb-5 mt-3">
-      <h1><%= @user.email %></h1>
+      <h1><%= current_user.email %></h1>
     </div>
   </div>
 
@@ -19,5 +19,4 @@
   </div>
 </div>
 
-<%= render 'icon_container' %>
 <%= render 'bottom_slide_view' %>
