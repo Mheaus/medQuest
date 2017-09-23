@@ -6,28 +6,25 @@
   <div id="main">
     <% @userbadge.badge.objectives.each do |objective| %>
     <div class="objective">
-      <h2 class='accordion'> <%= objective.name  %></h2>
-      <p class='content'> <%= objective.description  %> </p>
+      <div class="accordion">
+        <p class="objective-name"><%= objective.name  %></p>
+      </div>
+      <div class='content'>
+        <p> <%= objective.description  %></p>
+        <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+      </div>
     </div>
     <% end %>
   </div>
-
-
-
-
-
-
 
 
 <script>
 
 $(function() {
   $('.content').hide();
-  $('h2.accordion').click(function() {
-  $(this).next().slideToggle('fast').siblings('div:visible').slideUp('fast');
-
+  $('.accordion').click(function() {
+    $(this).next().slideToggle('fast').siblings('div:invisible').slideUp('fast');
   });
-
 })();
 
 </script>

@@ -5,9 +5,9 @@
 }
 
 .accordion {
-  padding: 0.313rem; /* 5/16 */
-  // height: 250px;
-  // width: 600px;
+  margin-top: 0.5rem; /* 8/16 */
+  margin-bottom: 0rem;
+  padding: 1.5rem;
   cursor: pointer;
   text-transform: uppercase;
   background-color: $orange;
@@ -25,10 +25,10 @@
 }
 
 .objective {
-  margin-left: 6.25rem; /* 100/16 */
-  margin-right: 6.25rem; /* 100/16 */
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .badge-name {
-  
+
 }
