@@ -1,0 +1,31 @@
+
+<h1 class='badge-name text-center'><%= @userbadge.badge.name.upcase %></h1>
+
+
+
+  <div id="main">
+    <% @userbadge.badge.objectives.each do |objective| %>
+    <div class="objective">
+      <div class="accordion">
+        <p class="objective-name"><%= objective.name  %></p>
+      </div>
+      <div class='content'>
+        <p> <%= objective.description  %></p>
+        <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+<script>
+
+$(function() {
+  $('.content').hide();
+  $('.accordion').click(function() {
+      $('.content').hide();
+    $(this).next().slideToggle('slow').siblings('div:invisible').slideUp('slow');
+  });
+})();
+
+</script>

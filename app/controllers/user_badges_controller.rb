@@ -4,5 +4,6 @@ class UserBadgesController < ApplicationController
   end
 
   def show
+    @userbadge = UserBadge.find(params[:id])
   end
 end
