@@ -21,9 +21,17 @@
   .badge-card {
     border: solid 1px;
     border-radius: 5px;
-    background: no-repeat center/120% /*url("https://static.pexels.com/photos/109260/pexels-photo-109260.jpeg")*/ rgba(0,0,0,0.6);
-    &-name {
-      font-size: 1.3rem;
+    background: no-repeat center/120% linear-gradient(90deg, #2bb8db, #94e7fc);
+    p {
+      margin: 0;
+      font-weight: bold;
+      .badge-card-name {
+        font-size: 1.3rem;
+
+      }
+    }
+    .progression {
+      font-size: 3vw;
     }
     .badge-icon-container {
       padding: 2% 0;
