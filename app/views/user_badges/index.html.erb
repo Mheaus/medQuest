@@ -12,7 +12,8 @@
     <% @userbadges.each do |userbadge| %>
       <div class="col-12 d-flex mb-3 justify-content-between badge-card">
         <p class="badge-name"><%= userbadge.badge.name %></p>
-        <%= render 'icon_container' %>
+        <% progressionRequested = ((userbadge.user_objectives.count / Badge.find(userbadge.badge_id).objectives.count.to_f).round(2)) %>
+        <%= render 'icon_container', value: userbadge.badge.id, progression: progressionRequested %>
       </div>
       <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
     <% end %>
