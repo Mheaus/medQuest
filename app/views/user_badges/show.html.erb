@@ -23,7 +23,8 @@
 $(function() {
   $('.content').hide();
   $('.accordion').click(function() {
-    $(this).next().slideToggle('fast').siblings('div:invisible').slideUp('fast');
+      $('.content').hide();
+    $(this).next().slideToggle('slow').siblings('div:invisible').slideUp('slow');
   });
 })();
 
