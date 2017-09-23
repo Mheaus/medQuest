@@ -1,3 +1,8 @@
+.wrapper {
+  background-color: $green;
+  height: 100vh;
+}
+
 #main {
   padding-top: 0.625rem; /* 10/16 */
   text-align: center;
@@ -10,8 +15,8 @@
   padding: 1.5rem;
   cursor: pointer;
   text-transform: uppercase;
-  background-color: $orange;
-  color: #fff;
+  background-color: #EEF7E3;
+  color: black;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -20,7 +25,7 @@
 
 .content {
   background-color: #fff;
-  border-left: 2px solid  $orange;
+  border-left: 2px solid  #EEF7E3;
   padding: 1.25rem; /* 20/16 */
 }
 
@@ -30,5 +35,5 @@
 }
 
 .badge-name {
-
+  color: #EEF7E3;
 }
