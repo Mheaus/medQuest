@@ -5,8 +5,5 @@ class UserBadgesController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @badge = UserBadge.find(params[:id]).badge
-    @objectives = @badge.objectives
   end
 end

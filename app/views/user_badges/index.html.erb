@@ -5,16 +5,16 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" id="badges-cards">
     <div class="col-12">
       <p>badges :</p>
     </div>
     <% @userbadges.each do |userbadge| %>
-      <div class="col-12">
-        <%= link_to user_badge_path(userbadge), class: "card" do %>
+      <div class="col-12 mb-3">
+        <%= link_to user_badge_path(userbadge), class: "card border-left-0" do %>
           <div class="card-body">
             <h4 class="card-title"><%= userbadge.badge.name %></h4>
-            <p class="card-text"><%= userbadge.badge.objectives.first.description %></p>
+            <p class="card-text"><%=  %></p>
           </div>
         <% end %>
       </div>
