@@ -13,10 +13,10 @@
       <div class="col-12 d-flex mb-3 justify-content-between badge-card">
         <p class="badge-name"><%= userbadge.badge.name %></p>
         <%= render 'icon_container' %>
+        <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
       </div>
-      <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
     <% end %>
   </div>
+  <%= render 'bottom_slide_view' %>
 </div>
 
-<%= render 'bottom_slide_view' %>

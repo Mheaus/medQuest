@@ -1,4 +1,5 @@
 #badges-cards {
+  position: relative;
   .badge-card {
     border: solid 1px;
     border-radius: 0 5px 5px 0;
@@ -13,6 +14,17 @@
     }
   }
   .badge-show-link {
-
+    text-decoration: none;
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    color: white;
+    justify-content: center;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
 }
