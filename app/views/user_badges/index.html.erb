@@ -14,7 +14,7 @@
         <p class="badge-name"><%= userbadge.badge.name %></p>
         <%= render 'icon_container' %>
       </div>
-      <%= link_to "", user_badge_path(userbadge) %>
+      <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
     <% end %>
   </div>
 </div>
