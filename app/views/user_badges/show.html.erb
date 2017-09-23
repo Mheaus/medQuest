@@ -1,24 +1,25 @@
-
-<h1 class='badge-name text-center'><%= @userbadge.badge.name.upcase %></h1>
-
-<div id="accordion">
-  <% @userbadge.badge.objectives.each do |objective| %>
-    <div class="objective">
-      <div class="accordion-toggle">
-        <p class="objective-name"><%= objective.name  %></p>
-      </div>
-      <div class='accordion-content'>
-        <p> <%= objective.description %></p>
-          <% if UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) == nil %>
-            <%= link_to user_badge_user_objectives_path(@userbadge, objective), method: :post do %>
-              <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
-            <% end %>
-          <% end %>
+<div class="wrapper">
+  <h1 class='badge-name text-center'><%= @userbadge.badge.name.upcase %></h1>
+  <div id="accordion">
+    <% @userbadge.badge.objectives.each do |objective| %>
+      <div class="objective">
+        <div class="accordion-toggle">
+          <p class="objective-name"><%= objective.name  %></p>
+          <i class='fa fa-check-circle-o objective-done'></i>
+          <!-- class undone for undone css -->
         </div>
-    </div>
-  <% end %>
+        <div class='accordion-content'>
+          <p> <%= objective.description %></p>
+            <% if UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) == nil %>
+              <%= link_to user_badge_user_objectives_path(@userbadge, objective), method: :post do %>
+                <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
 
 <!-- JS -->
 <script type="text/javascript">

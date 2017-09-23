@@ -1,3 +1,13 @@
+.wrapper {
+  // background-color: $green;
+  // background: -webkit-linear-gradient(4deg, rgb(240, 253, 224), rgb(152, 203, 91));
+  // background: linear-gradient(4deg, rgb(240, 253, 224), rgb(152, 203, 91));
+  background: #dce35b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #dce35b, #45b649); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #dce35b, #45b649); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+
 #accordion {
   padding-top: 0.625rem; /* 10/16 */
   text-align: center;
