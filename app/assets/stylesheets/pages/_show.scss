@@ -1,0 +1,23 @@
+#main {
+  padding-top: 10px;
+  width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.accordion {
+  padding: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: $orange;
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.content {
+  background-color: #fff;
+  padding: 20px;
+}

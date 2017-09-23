@@ -1,0 +1,21 @@
+<h1><%= @userbadge.badge.name %></h1>
+
+<div id="main">
+  <% @userbadge.badge.objectives.each do |objective| %>
+    <h2 class='accordion'> <%= objective.name  %></h2>
+    <p class='content'> <%= objective.description  %> </p>
+  <% end %>
+</div>
+
+  <script>
+
+  $(function() {
+    $('.content').hide();
+    $('h2.accordion').click(function() {
+    $(this).next().slideToggle('fast').siblings('div:visible').slideUp('fast');
+
+    });
+
+  })();
+
+  </script>
