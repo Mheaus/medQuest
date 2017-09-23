@@ -1,21 +1,33 @@
-<h1><%= @userbadge.badge.name %></h1>
 
-<div id="main">
-  <% @userbadge.badge.objectives.each do |objective| %>
-    <h2 class='accordion'> <%= objective.name  %></h2>
-    <p class='content'> <%= objective.description  %> </p>
-  <% end %>
-</div>
+<h1 class='badge-name text-center'><%= @userbadge.badge.name.upcase %></h1>
 
-  <script>
 
-  $(function() {
-    $('.content').hide();
-    $('h2.accordion').click(function() {
-    $(this).next().slideToggle('fast').siblings('div:visible').slideUp('fast');
 
-    });
+  <div id="main">
+    <% @userbadge.badge.objectives.each do |objective| %>
+    <div class="objective">
+      <h2 class='accordion'> <%= objective.name  %></h2>
+      <p class='content'> <%= objective.description  %> </p>
+    </div>
+    <% end %>
+  </div>
 
-  })();
 
-  </script>
+
+
+
+
+
+
+<script>
+
+$(function() {
+  $('.content').hide();
+  $('h2.accordion').click(function() {
+  $(this).next().slideToggle('fast').siblings('div:visible').slideUp('fast');
+
+  });
+
+})();
+
+</script>

@@ -1,12 +1,13 @@
 #main {
-  padding-top: 10px;
-  width: 500px;
+  padding-top: 0.625rem; /* 10/16 */
   text-align: center;
   margin: 0 auto;
 }
 
 .accordion {
-  padding: 5px;
+  padding: 0.313rem; /* 5/16 */
+  // height: 250px;
+  // width: 600px;
   cursor: pointer;
   text-transform: uppercase;
   background-color: $orange;
@@ -19,5 +20,15 @@
 
 .content {
   background-color: #fff;
-  padding: 20px;
+  border-left: 2px solid  $orange;
+  padding: 1.25rem; /* 20/16 */
+}
+
+.objective {
+  margin-left: 6.25rem; /* 100/16 */
+  margin-right: 6.25rem; /* 100/16 */
+}
+
+.badge-name {
+  
 }
