@@ -6,23 +6,40 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-UserObjective.destroy_all
-Objective.destroy_all
-UserBadge.destroy_all
-Badge.destroy_all
-User.destroy_all
-
 puts 'lets create users'
 
 User.create!(
-  email: 'riberac@gmail.com',
-  password: '1234',
+  email: 'romain@gmail.com',
+  first_name: 'Romain',
+  password: '123456',
+)
+
+User.create!(
+  email: 'charles@gmail.com',
+  first_name: 'Charles',
+  password: '123456',
+)
+
+User.create!(
+  email: 'kos@gmail.com',
+  first_name: 'Kos',
+  password: '123456',
+)
+
+User.create!(
+  email: 'mathieu@gmail.com',
+  first_name: 'Mathieu',
+  password: '123456',
 )
 
 puts 'lets create badges'
 
 Badge.create!(
   name: 'Le gastronome'
+)
+
+Badge.create!(
+  name: 'Le débutant'
 )
 
 Badge.create!(
@@ -33,38 +50,14 @@ Badge.create!(
   name: 'Le cycliste'
 )
 
-puts 'lets create userbadges'
-
-Badge.all.each do |badge|
-  UserBadge.create!(
-  user: User.last,
-  badge: badge,
-  )
-end
-
-puts 'and now objectives'
-
-Objective.create!(
-  badge: Badge.first,
-  name: "Specialité",
-  description: "Découvrir une spécialité locale, vin, foie gras... Vous pouvez aller en chercher à...",
+Badge.create!(
+  name: 'Familial'
 )
 
-Objective.create!(
-  badge: Badge.first,
-  name: "Marché",
-  description: "Visiter un marché comme le marché au gras, le marché aux truffes ou le marché aux noix...",
+Badge.create!(
+  name: 'Découverte'
 )
 
-Objective.create!(
-  badge: Badge.first,
-  name: "Marché festifs",
-  description: "Visiter le fameux marché nocture de la Roche Chalais ou l'estival gourmande de Saint Aulaye",
-)
-
-puts 'and now userobjectives'
-
-UserObjective.create!(
-  user_badge: UserBadge.first,
-  objective: Objective.first,
+Userbadge.create!(
+  user_id:@
 )
