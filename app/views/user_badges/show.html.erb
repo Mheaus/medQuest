@@ -1,31 +1,35 @@
 
 <h1 class='badge-name text-center'><%= @userbadge.badge.name.upcase %></h1>
 
-
-
-  <div id="main">
+  <div id="accordion">
     <% @userbadge.badge.objectives.each do |objective| %>
     <div class="objective">
-      <div class="accordion">
+      <div class="accordion-toggle">
         <p class="objective-name"><%= objective.name  %></p>
       </div>
-      <div class='content'>
-        <p> <%= objective.description  %></p>
-        <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+      <div class='accordion-content'>
+        <p> <%= objective.description %></p>
+          <% if UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) == nil %>
+            <%= link_to user_badge_user_objectives_path(@userbadge, objective), method: :post do %>
+          <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <% end %>
   </div>
 
+<!-- JS -->
+<script type="text/javascript">
+  $(document).ready(function($) {
+    $('#accordion').find('.accordion-toggle').click(function(){
 
-<script>
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
 
-$(function() {
-  $('.content').hide();
-  $('.accordion').click(function() {
-      $('.content').hide();
-    $(this).next().slideToggle('slow').siblings('div:invisible').slideUp('slow');
+      //Hide the other panels
+      $(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });
   });
-})();
-
 </script>

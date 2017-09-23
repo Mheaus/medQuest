@@ -1,10 +1,10 @@
-#main {
+#accordion {
   padding-top: 0.625rem; /* 10/16 */
   text-align: center;
   margin: 0 auto;
 }
 
-.accordion {
+.accordion-toggle {
   margin-top: 0.5rem; /* 8/16 */
   margin-bottom: 0rem;
   padding: 1.5rem;
@@ -18,7 +18,8 @@
   -ms-user-select: none;
 }
 
-.content {
+.accordion-content {
+  display: none;
   background-color: #fff;
   border-left: 2px solid  $orange;
   padding: 1.25rem; /* 20/16 */
