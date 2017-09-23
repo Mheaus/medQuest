@@ -6,14 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Userobjective.destroy_all
+UserObjective.destroy_all
 Objective.destroy_all
-Userbadge.destroy_all
+UserBadge.destroy_all
 Badge.destroy_all
 User.destroy_all
-
-
-
 
 puts 'lets create users'
 
@@ -39,7 +36,7 @@ Badge.create!(
 puts 'lets create userbadges'
 
 Badge.all.each do |badge|
-  Userbadge.create!(
+  UserBadge.create!(
   user: User.last,
   badge: badge,
   )
@@ -67,7 +64,7 @@ Objective.create!(
 
 puts 'and now userobjectives'
 
-Userobjective.create!(
-  userbadge: Userbadge.first,
+UserObjective.create!(
+  user_badge: UserBadge.first,
   objective: Objective.first,
 )
