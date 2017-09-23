@@ -1,4 +1,17 @@
 #badges-cards {
   .card {
   }
+  .badge-card {
+    border: solid 1px;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
+    .badge-name {
+      padding-top: 2%;
+      font-size: 1.3rem;
+    }
+    .badge-icon-container {
+      padding: 2% 0;
+      border-left: solid 1px;
+    }
+  }
 }

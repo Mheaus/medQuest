@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 text-center">
+    <div class="col-12 text-center mb-5 mt-3">
       <h1><%= @user.email %></h1>
     </div>
   </div>
@@ -10,14 +10,12 @@
       <p>badges :</p>
     </div>
     <% @userbadges.each do |userbadge| %>
-      <div class="col-12 mb-3">
-        <%= link_to user_badge_path(userbadge), class: "card border-left-0" do %>
-          <div class="card-body">
-            <h4 class="card-title"><%= userbadge.badge.name %></h4>
-            <p class="card-text"><%=  %></p>
-          </div>
-        <% end %>
+      <div class="col-12 d-flex mb-3 justify-content-between badge-card">
+        <p class="badge-name"><%= userbadge.badge.name %></p>
+        <%= render 'icon_container' %>
       </div>
+      <%= link_to "", user_badge_path(userbadge) %>
     <% end %>
   </div>
 </div>
+
