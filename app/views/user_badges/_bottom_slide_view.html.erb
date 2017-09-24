@@ -1,18 +1,25 @@
-<div class="bottom-view">
-  <div class="bottom-view-container d-none">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <p id="badge-acquired-title">Vos badges acquis</p>
+<div class="bottom-view expanded ">
+  <div class="bottom-view-container">
+    <div class="container d-flex flex-column justify-content-between">
+      <div alt="badge-group">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p id="badge-acquired-title">Vos badges acquis</p>
+          </div>
+        </div>
+        <div class="row bottom-view-badges-container ">
+          <% @userbadges.each_with_index do |userbadge, index| %>
+            <div class="col-4 mt-4 mb-5">
+              <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index, iconname: userbadge.badge.icon_name %>
+              <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
+            </div>
+          <% end %>
         </div>
       </div>
-      <div class="row bottom-view-badges-container ">
-        <% @userbadges.each_with_index do |userbadge, index| %>
-          <div class="col-4 mt-4 mb-5">
-            <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
-            <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
-          </div>
-        <% end %>
+      <div class="row align-text-bottom">
+        <div class="col-12 text-right" id="collapse">
+          <%= image_tag "chevrondown.svg", height: "20px;" %>
+        </div>
       </div>
     </div>
   </div>
@@ -23,5 +30,5 @@
   $('.bottom-view').click(function() {
     $(this).toggleClass('expanded');
     $('.bottom-view-container').toggleClass('d-none');
-  })
+  });
 </script>
