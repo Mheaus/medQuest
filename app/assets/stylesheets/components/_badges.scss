@@ -1,34 +1,37 @@
 #header-background {
-  background: linear-gradient(90deg, #89C443, #a5db62);
-  height: 10rem;
+  background: #2bb8db;
+  height: 25vh;
   color: white;
   #title {
-    font-family: 'PT Serif', serif;
     margin-bottom: 0;
-    font-size: 45px;
+    font-size: 24px;
+    margin-top: 11vh;
+  }
+  p {
+    font-size: 17px;
   }
   #username {
-    font-weight: bold;
+    font-weight: lighter;
     font-size: 15px;
   }
 }
 
 #badges-cards {
-  margin-top: -10vh;
+  margin-top: -6vh;
   position: relative;
-  padding: 5%;
-  color: white;
+  padding: 3%;
+  .badge-card-name {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  p {
+    line-height: 17px;
+    margin: 0;
+  }
   .badge-card {
-    border: solid 1px;
+    border: solid 1px #9f9f9f;
     border-radius: 5px;
-    background: no-repeat center/120% linear-gradient(90deg, #2bb8db, #94e7fc);
-    p {
-      margin: 0;
-      font-weight: bold;
-      .badge-card-name {
-        font-size: 18px;
-      }
-    }
+    background-color: white;
     .progression {
       font-size: 12px;
     }
@@ -49,6 +52,13 @@
       &:hover {
         background-color: rgba(0, 0, 0, 0.2);
       }
+    }
+  }
+  #badge-new {
+    height: 17vh;
+    #plus {
+      color: #2bb8db;
+      font-size: 80px;
     }
   }
 }
