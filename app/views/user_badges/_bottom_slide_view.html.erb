@@ -9,8 +9,18 @@
       <div class="row bottom-view-badges-container ">
         <% @completed_badges.each_with_index do |userbadge, index| %>
           <div class="col-4 mt-4 mb-5">
-            <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
-            <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
+            <%= link_to user_badge_path(userbadge), class: "badge-show-link" do %>
+              <div class="badge-icon-container d-flex align-items-center justify-content-center" data-progress="">
+                <svg width="80" height="80" id="badgeicon<%= userbadge.badge.id %>" class='completed-achievements'>
+                    <defs>
+                        <clipPath id="circleView">
+                          <circle cx="40" cy="40" r="40" fill="#FFFFFF" />
+                        </clipPath>
+                    </defs>
+                  <image width="80" height="80" xlink:href="<%= image_url(userbadge.badge.icon_name) %>" clip-path="url(#circleView)" transform="scale(-1, -1) translate(-80, -80)" />
+                </svg>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
