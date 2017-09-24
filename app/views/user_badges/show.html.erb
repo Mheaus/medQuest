@@ -33,7 +33,9 @@
         <h5 class="modal-title" id="exampleModalLabel"></h5>
       </div>
       <div class="modal-body">
-        
+        <% @userbadges.each_with_index do |userbadge, index| %>
+          <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
+        <% end %>
         <h3 class='text-center'>
           Félicitations !
           Vous venez de débloquer le badge : <%= @userbadge.badge.name %>
@@ -46,18 +48,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- JS -->
 <script type="text/javascript">
