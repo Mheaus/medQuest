@@ -1,5 +1,5 @@
 <% array_of_icons = %w(curd.svg forest.svg bicycle.svg) %>
-<div class="badge-icon-container d-flex align-items-center" data-progress="<%= progression if progression != nil %>">
+<div class="badge-icon-container d-flex align-items-center justify-content-center" data-progress="<%= progression if progression != nil %>">
   <svg width="80" height="80" id="badgeicon<%= value %>" class="<%= 'completed-achievements' if progression == nil %>">
       <defs>
           <clipPath id="circleView">
