@@ -7,16 +7,17 @@
   </div>
 
   <div class="row" id="badges-cards">
-
-    <% @userbadges.each do |userbadge| %>
+    <% @userbadges.each_with_index do |userbadge, index| %>
       <div class="col-12 d-flex mb-2 justify-content-between badge-card">
+
         <div class="d-flex flex-column justify-content-end mb-3">
           <p class="badge-card-name"><%= userbadge.badge.name %></p>
           <p class="progression"><%= "#{userbadgeobjectifcount = userbadge.user_objectives.count}/#{badgeobjectifcount = Badge.find(userbadge.badge_id).objectives.count}" %></p>
         </div>
 
         <% progressionRequested = ((userbadgeobjectifcount / badgeobjectifcount.to_f).round(2)) %>
-        <%= render 'icon_container', value: userbadge.badge.id, progression: progressionRequested %>
+        <%= render 'icon_container', value: userbadge.badge.id, progression: progressionRequested,
+        index: index %>
 
         <%= link_to "", user_badge_path(userbadge), class: "badge-card-show-link" %>
       </div>
