@@ -21,9 +21,9 @@
 </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -33,14 +33,13 @@
         <h5 class="modal-title" id="exampleModalLabel"></h5>
       </div>
       <div class="modal-body">
-        <% @userbadges.each_with_index do |userbadge, index| %>
-          <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
-        <% end %>
+        <div class="modal-icon">
+          <%= render 'icon_container', value: @userbadge.badge.id, progression: nil, index: @userbadge.id %>
+        </div>
         <h3 class='text-center'>
           Félicitations !
           Vous venez de débloquer le badge : <%= @userbadge.badge.name %>
         </h3>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-modal" data-dismiss="modal">Ajouter ce badge !</button>
