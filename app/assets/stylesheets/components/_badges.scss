@@ -2,6 +2,7 @@
   background: #2bb8db;
   height: 25vh;
   color: white;
+  overflow: hidden;
   #title {
     margin-bottom: 0;
     font-size: 24px;
@@ -16,7 +17,6 @@
   }
   #medal {
     margin-top: -50px;
-    overflow: hidden;
   }
 }
 
