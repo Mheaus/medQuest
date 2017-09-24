@@ -55,8 +55,8 @@ Objective.create!(
 
 Objective.create!(
   badge: Badge.first,
-  name: "Marchés",
-  description: "Visiter un marché comme le marché au gras, le marché aux truffes ou le marché aux noix.",
+  name: "Pic Nic",
+  description: "Faire un pic nic le long de la Dronne",
 )
 
 Objective.create!(
