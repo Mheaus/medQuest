@@ -26,7 +26,10 @@
         <p class="objective-decription-content mb-3"><%= objective.description  %></p>
         <% if UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) == nil %>
           <%= link_to user_badge_user_objectives_path(@userbadge, objective_id: objective), method: :post do %>
-            <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+            <div class="modal-content-icons d-flex justify-content-between">
+              <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+              <i class='fa fa-info-circle awe-info' ></i>
+            </div>
           <% end %>
         <% end %>
       </div>
