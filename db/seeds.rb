@@ -79,7 +79,7 @@ Objective.create!(
 
 Objective.create!(
   badge: Badge.second,
-  name: "Survivre à une partie de paintball !",
+  name: "Survivre à une partie de paintball",
   description: "Faire un paintball avec vos amis dans l'un des sites de la région.",
 )
 
