@@ -22,15 +22,18 @@ User.create!(
 puts 'lets create badges'
 
 Badge.create!(
-  name: 'Le Gastronome'
+  name: 'Le Gastronome',
+  icon_name: 'curd.svg'
 )
 
 Badge.create!(
-  name: "L'Aventurier"
+  name: "L'Aventurier",
+  icon_name: 'forest.svg'
 )
 
 Badge.create!(
-  name: 'Le Cycliste'
+  name: 'Le Cycliste',
+  icon_name: 'bicycle.svg'
 )
 
 puts 'lets create userbadges'
