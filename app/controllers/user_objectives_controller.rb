@@ -1,9 +1,12 @@
 class UserObjectivesController < ApplicationController
   def create
-    user_badge = UserBadge.find(params[:user_badge_id])
-    user_objective = user_badge.user_objectives.build(user_badge_params)
+    @userbadge = UserBadge.find(params[:user_badge_id])
+    user_objective = @userbadge.user_objectives.build(user_badge_params)
     user_objective.save
-    redirect_to user_badge
+    if @userbadge.all_objectives_done?
+      @userbadge.update(completed: true)
+      @trigger_modal = true
+    end
   end
 
   def user_badge_params
