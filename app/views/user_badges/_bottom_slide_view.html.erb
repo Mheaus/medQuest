@@ -1,12 +1,13 @@
 <div class="bottom-view">
   <div class="bottom-view-container d-none">
-    <!-- TODO/ remplir avec les badges acquis -->
-    <p>Achievements unlocked</p>
-    <ul>
-      <% @userbadges.each_with_index do |userbadge, index| %>
-        <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
-      <% end %>
-    </ul>
+    <div class="container">
+      <p>Vos badges acquis</p>
+      <div class="bottom-view-badges-container">
+        <% @userbadges.each_with_index do |userbadge, index| %>
+          <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
