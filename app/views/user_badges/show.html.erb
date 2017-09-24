@@ -5,9 +5,7 @@
       <div class="objective">
         <div class="accordion-toggle">
           <p class="objective-name"><%= objective.name  %></p>
-          <i class='fa fa-check-circle-o
-          <%= UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) != nil ?
-            "objective-done" : "objective-undone" %>'></i>
+          <i class='fa fa-check-circle-o <%= done_class(objective) %>'></i>
         </div>
         <div class='accordion-content'>
           <p> <%= objective.description %></p>
