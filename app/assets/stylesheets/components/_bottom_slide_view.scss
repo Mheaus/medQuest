@@ -13,11 +13,27 @@
   }
   &-container {
     margin-top: 50px;
+    #badge-acquired-title {
+      font-size: 34px;
+      border-bottom: solid 1px;
+    }
   }
   &-badges-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
+    .completed-achievements {
+      transform: scale(-1.5);
+    }
+    .badge-show-link {
+      text-decoration: none;
+      z-index: 4;
+      position: absolute;
+      height: 130%;
+      width: 100%;
+      top: 0px;
+      left: 0px;
+      color: white;
+      justify-content: center;
+    }
   }
 }
 

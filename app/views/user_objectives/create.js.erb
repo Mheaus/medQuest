@@ -1,0 +1,4 @@
+$('#accordion').html("<%= j(render 'accordion_index') %>")
+<% if @trigger_modal %>
+  $('#myModal').modal('show');
+<% end %>
