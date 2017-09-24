@@ -1,6 +1,9 @@
 <div class="container-fluid" id="userbadgeshow">
   <div class="row" id="header-background">
     <div class="col-12 mb-5">
+      <%= link_to :back do %>
+        <%= image_tag "chevronleft.svg", height: "20px;", class: "mt-4" %>
+      <% end %>
       <h1 id="title"><%= @userbadge.badge.name %></h1>
       <p>Objectifs :</p>
     </div>
