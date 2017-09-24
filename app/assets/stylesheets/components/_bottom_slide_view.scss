@@ -6,12 +6,18 @@
   bottom: 0;
   left: 0;
   right: 0;
+  color: white;
   transition: height ease-out .4s;
   &.expanded::before {
     display: none;
   }
   &-container {
     margin-top: 50px;
+  }
+  &-badges-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
