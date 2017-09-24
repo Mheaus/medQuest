@@ -8,11 +8,15 @@
   right: 0;
   color: white;
   transition: height ease-out .4s;
+
   &.expanded::before {
     display: none;
   }
   &-container {
-    margin-top: 50px;
+    .container {
+      height: 100vh;
+      padding: 5%;
+    }
     #badge-acquired-title {
       font-size: 34px;
       border-bottom: solid 1px;
@@ -21,7 +25,7 @@
   &-badges-container {
     position: relative;
     .completed-achievements {
-      transform: scale(-1.5);
+      transform: scale(-1.2);
     }
     .badge-show-link {
       text-decoration: none;

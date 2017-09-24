@@ -1,30 +1,39 @@
 <div class="bottom-view">
   <div class="bottom-view-container d-none">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <p id="badge-acquired-title">Vos badges acquis</p>
+    <div class="container d-flex flex-column justify-content-between">
+      <div class="badge-group">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p id="badge-acquired-title">Vos badges acquis</p>
+          </div>
+        </div>
+        <div class="row bottom-view-badges-container ">
+          <% @completed_badges.each_with_index do |userbadge, index| %>
+            <div class="col-4 mt-4 mb-5">
+
+                <div class="badge-icon-container d-flex align-items-center justify-content-center" data-progress="">
+                  <svg width="80" height="80" id="badgeicon<%= userbadge.badge.id %>" class='completed-achievements'>
+                    <defs>
+                      <clipPath id="circleView">
+                        <circle cx="40" cy="40" r="40" fill="#FFFFFF" />
+                      </clipPath>
+                    </defs>
+                    <image width="80" height="80" xlink:href="<%= image_url(userbadge.badge.icon_name) %>" clip-path="url(#circleView)" transform="scale(-1, -1) translate(-80, -80)" />
+                  </svg>
+                </div>
+              <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
+            </div>
+          <% end %>
         </div>
       </div>
-      <div class="row bottom-view-badges-container ">
-        <% @completed_badges.each_with_index do |userbadge, index| %>
-          <div class="col-4 mt-4 mb-5">
-            <%= link_to user_badge_path(userbadge), class: "badge-show-link" do %>
-              <div class="badge-icon-container d-flex align-items-center justify-content-center" data-progress="">
-                <svg width="80" height="80" id="badgeicon<%= userbadge.badge.id %>" class='completed-achievements'>
-                    <defs>
-                        <clipPath id="circleView">
-                          <circle cx="40" cy="40" r="40" fill="#FFFFFF" />
-                        </clipPath>
-                    </defs>
-                  <image width="80" height="80" xlink:href="<%= image_url(userbadge.badge.icon_name) %>" clip-path="url(#circleView)" transform="scale(-1, -1) translate(-80, -80)" />
-                </svg>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
+
+      <div class="row align-text-bottom">
+        <div class="col-12 text-right" id="collapse">
+          <%= image_tag "chevrondown.svg", height: "20px;" %>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
 
