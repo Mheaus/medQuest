@@ -1,15 +1,18 @@
 $(document).ready(function(){
   function createProgressElement(element){
     return new ProgressBar.Circle(element, {
-      strokeWidth: 6,
+      strokeWidth: 10,
       easing: 'easeOut',
       duration: 2500,
       color: '#89C443',
       trailColor: '#eee',
-      trailWidth: 6,
+      trailWidth: 10,
       fill: 'rgba(200, 153, 73, .2)',
-      from: { color: '#ECD611' },
-      to: { color: '#89C443' },
+      from: { color: '#70A9A1' },
+      to: { color: '#ECD611' },
+      step: function(state, bar, attachment) {
+          bar.path.setAttribute('stroke', state.color);
+      }
     });
   };
 
