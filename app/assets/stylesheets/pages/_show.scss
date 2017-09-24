@@ -8,13 +8,13 @@
   height: 100vh;
 }
 
-#main {
+#accordion {
   padding-top: 0.625rem; /* 10/16 */
   text-align: center;
   margin: 0 auto;
 }
 
-.accordion {
+.accordion-toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +32,8 @@
   -ms-user-select: none;
 }
 
-.content {
+.accordion-content {
+  display: none;
   background-color: #fff;
   border-radius: 2px;
   border-left: 2px solid  #EEF7E3;
@@ -53,7 +54,7 @@
 .objective-done {
   display: flex;
   font-size: 3.125rem; /* 50/16 */
-  color: $yellow !important;
+  color: $yellow;
 }
 
 .badge-name {
