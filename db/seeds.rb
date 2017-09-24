@@ -49,38 +49,44 @@ puts 'and now objectives'
 
 Objective.create!(
   badge: Badge.first,
-  name: "Specialité",
+  name: "Un festin régional",
   description: "Au choix, manger du foie gras, du confit ou du magret. Un produit local bien sur !",
 )
 
 Objective.create!(
   badge: Badge.first,
-  name: "Marchés",
-  description: "Visiter un marché comme le marché au gras, le marché aux truffes ou le marché aux noix.",
+  name: "Les pieds dans l'eau",
+  description: "Faire un pic nic le long de la Dronne",
 )
 
 Objective.create!(
   badge: Badge.first,
-  name: "Marché festifs",
-  description: "Visiter le fameux marché nocture de la Roche Chalais ou l'estival gourmande de Saint Aulaye.",
+  name: "Les Marchés festifs",
+  description: "Visiter le fameux marché nocture de la Roche Chalais ou les estivales gourmandes de Saint Aulaye.",
 )
 
 Objective.create!(
   badge: Badge.second,
-  name: "Randonnée pedestre",
+  name: "Explorer le territoire",
   description: "Découvrir l'eglise souterraine en réalisant la balade des Tourbieres (4km)",
 )
 
 Objective.create!(
   badge: Badge.second,
-  name: "Canoë",
+  name: "Défier les rapides",
   description: "Faire du canoë sur la Dronne, vous pouvez vous renseigner au Camping du pont à Lisle ou chez Canoë Ribérac.",
 )
 
 Objective.create!(
   badge: Badge.second,
-  name: "Paintball !!",
-  description: "Faire un paintball avec vos amis dans l'un des sites de la communauté de commune, prévoir des rechanges !",
+  name: "Survivre à une partie de paintball !",
+  description: "Faire un paintball avec vos amis dans l'un des sites de la région.",
+)
+
+Objective.create!(
+  badge: Badge.third,
+  name: "Marché festifs",
+  description: "Visiter le fameux marché nocture de la Roche Chalais ou l'estival gourmande de Saint Aulaye",
 )
 
 Objective.create!(
