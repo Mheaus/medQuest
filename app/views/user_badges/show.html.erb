@@ -2,7 +2,7 @@
   <div class="row" id="header-background">
     <div class="col-7 mb-5">
       <%= link_to user_badges_path do %>
-        <%= image_tag "chevronleft.svg", height: "20px;", class: "mt-4" %>
+        <%= image_tag "chevronleft.svg", height: "20px;", class: "mt-4", id: "badge-image" %>
       <% end %>
       <h1 id="title"><%= @userbadge.badge.name %></h1>
       <p>Objectifs :</p>
