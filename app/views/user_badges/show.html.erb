@@ -1,22 +1,37 @@
-<div class="wrapper">
-  <h1 class='badge-name text-center'><%= @userbadge.badge.name.upcase %></h1>
-  <div id="accordion">
+<div class="container-fluid" id="userbadgeshow">
+  <div class="row" id="header-background">
+    <div class="col-12 mb-5">
+      <%= link_to user_badges_path do %>
+        <%= image_tag "chevronleft.svg", height: "20px;", class: "mt-4" %>
+      <% end %>
+      <h1 id="title"><%= @userbadge.badge.name %></h1>
+      <p>Objectifs :</p>
+    </div>
+  </div>
+
+  <div class="row" id="badges-cards">
+   <div class="col-12 " id="accordion">
     <% @userbadge.badge.objectives.each do |objective| %>
-      <div class="objective">
-        <div class="accordion-toggle">
-          <p class="objective-name"><%= objective.name  %></p>
+      <div class="d-flex mt-3 mb-1 justify-content-between badge-card accordion-toggle">
+        <div class="d-flex flex-column justify-content-end badge-card-details">
+          <p class="badge-card-name"><%= objective.name %></p>
+        </div>
+        <div class="d-flex align-items-center text-center mr-5">
           <i class='fa fa-check-circle-o <%= done_class(objective) %>'></i>
         </div>
-        <div class='accordion-content'>
-          <p> <%= objective.description %></p>
-            <% if UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) == nil %>
-              <%= link_to user_badge_user_objectives_path(@userbadge, objective_id: objective), method: :post do %>
-                <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
-              <% end %>
-            <% end %>
-        </div>
+        <!-- class undone for undone css -->
+      </div>
+
+      <div class="objective-decription accordion-content ml-3">
+        <p class="objective-decription-content mb-3"><%= objective.description  %></p>
+        <% if UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) == nil %>
+          <%= link_to user_badge_user_objectives_path(@userbadge, objective_id: objective), method: :post do %>
+            <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
+  </div>
   </div>
 </div>
 
@@ -24,13 +39,10 @@
 <script type="text/javascript">
   $(document).ready(function($) {
     $('#accordion').find('.accordion-toggle').click(function(){
-
       //Expand or collapse this panel
       $(this).next().slideToggle('fast');
-
       //Hide the other panels
       $(".accordion-content").not($(this).next()).slideUp('fast');
-
     });
   });
 </script>

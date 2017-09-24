@@ -1,62 +1,55 @@
-.wrapper {
-  // background-color: $green;
-  // background: -webkit-linear-gradient(4deg, rgb(240, 253, 224), rgb(152, 203, 91));
-  // background: linear-gradient(4deg, rgb(240, 253, 224), rgb(152, 203, 91));
-  background: #dce35b; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #dce35b, #45b649); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #dce35b, #45b649); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 100vh;
-}
-
-#accordion {
-  padding-top: 0.625rem; /* 10/16 */
-  text-align: center;
-  margin: 0 auto;
-}
-
-.accordion-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0.5rem; /* 8/16 */
-  margin-bottom: 0rem;
-  padding: 0.75rem;
-  border-radius: 2px;
-  cursor: pointer;
-  text-transform: uppercase;
-  background-color: #EEF7E3;
-  color: black;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.accordion-content {
-  display: none;
-  background-color: #fff;
-  border-radius: 2px;
-  border-left: 2px solid  #EEF7E3;
-  padding: 1.25rem; /* 20/16 */
-}
-
-.objective {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-.objective-undone {
-  display: flex;
-  font-size: 3.125rem; /* 50/16 */
+#userbadgeshow {
+  background: #2bb8db;
+  height: 25vh;
   color: white;
-}
+  #title {
+    margin-top: 3vh;
+  }
 
-.objective-done {
-  display: flex;
-  font-size: 3.125rem; /* 50/16 */
-  color: $yellow;
-}
+  #badges-cards {
+    padding: 0 3%;
+    #accordion {
+      padding: 0;
+      color: black;
+      .accordion-toggle {
+        height: 14vh;
+        cursor: pointer;
+        color: black;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+      .badge-card-details {
+        padding: 6%;
+        .badge-card-name {
+          font-weight: normal;
+          font-size: 20px;
+        }
+      }
+      .objective-undone {
+        font-size: 3.125rem; /* 50/16 */
+        color: #9f9f9f;
+      }
 
-.badge-name {
-  color: #EEF7E3;
+      .objective-done {
+        font-size: 3.125rem; /* 50/16 */
+        color: $yellow !important;
+      }
+    }
+    .accordion-content {
+      display: none;
+      background-color: #fff;
+      border-radius: 2px;
+      border-left: 2px solid  #EEF7E3;
+      padding: 1.25rem; /* 20/16 */
+    }
+    .objective-decription {
+      color: black;
+      background-color: rgba(204, 204, 204, 0.3);
+      border-radius: 2px;
+      border-left: 2px solid rgb(159, 159, 159);
+      padding: 1.25rem; /* 20/16 */
+    }
+  }
 }
