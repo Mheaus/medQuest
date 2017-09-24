@@ -30,16 +30,17 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Félicitation !</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
       </div>
       <div class="modal-body">
-        Vous avez rempli tout les objectifs et gagné ce badge :
+        <h3 class='text-center'>
+          Félicitations !
+          Vous venez de débloquer le badge : <%= @userbadge.badge.name %>
+        </h3>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">Ajouter ce badge à ma collection.</button>
+        <button type="button" class="btn btn-modal" data-dismiss="modal">Ajouter ce badge !</button>
       </div>
     </div>
   </div>
