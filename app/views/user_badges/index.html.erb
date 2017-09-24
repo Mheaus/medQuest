@@ -10,7 +10,7 @@
   </div>
 
   <div class="row" id="badges-cards">
-    <% @userbadges.each_with_index do |userbadge, index| %>
+    <% @userbadges.each do |userbadge| %>
       <div class="col-12 d-flex mb-2 justify-content-between badge-card">
 
         <div class="d-flex flex-column justify-content-end mb-3">
@@ -19,8 +19,17 @@
         </div>
 
         <% progressionRequested = ((userbadgeobjectifcount / badgeobjectifcount.to_f).round(2)) %>
-        <%= render 'icon_container', value: userbadge.badge.id, progression: progressionRequested,
-        index: index %>
+
+        <div class="badge-icon-container d-flex align-items-center justify-content-center" data-progress="<%= progressionRequested if progressionRequested != nil %>">
+          <svg width="80" height="80" id="badgeicon<%= userbadge.badge.id %>" class="<%= 'completed-achievements' if progressionRequested == nil %>">
+              <defs>
+                  <clipPath id="circleView">
+                    <circle cx="40" cy="40" r="40" fill="#FFFFFF" />
+                  </clipPath>
+              </defs>
+            <image width="80" height="80" xlink:href="<%= image_url(userbadge.badge.icon_name) %>" clip-path="url(#circleView)" transform="scale(-1, -1) translate(-80, -80)" />
+          </svg>
+        </div>
 
         <%= link_to "", user_badge_path(userbadge), class: "badge-card-show-link" %>
       </div>
@@ -31,4 +40,3 @@
   </div>
 </div>
 <%= render 'bottom_slide_view' %>
-

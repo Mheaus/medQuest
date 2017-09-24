@@ -28,7 +28,7 @@
       </div>
       <div class="modal-body">
         <div class="modal-icon">
-          <%= render 'icon_container', value: @userbadge.badge.id, progression: nil, index: 0 %>
+          <%= render partial: 'icon_container', locals: { icon: @userbadge.badge.icon_name } %>
         </div>
         <h3 class='text-center'>
           Félicitations !

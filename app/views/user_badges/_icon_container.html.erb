@@ -1,11 +1,10 @@
-<% array_of_icons = %w(curd.svg forest.svg bicycle.svg) %>
-<div class="badge-icon-container d-flex align-items-center justify-content-center" data-progress="<%= progression if progression != nil %>">
-  <svg width="80" height="80" id="badgeicon<%= value %>" class="<%= 'completed-achievements' if progression == nil %>">
+<div class="badge-icon-container d-flex align-items-center justify-content-center" data-progress="">
+  <svg width="80" height="80" class='completed-achievements'>
       <defs>
           <clipPath id="circleView">
             <circle cx="40" cy="40" r="40" fill="#FFFFFF" />
           </clipPath>
       </defs>
-    <image width="80" height="80" xlink:href="<%= image_url(array_of_icons[index]) %>" clip-path="url(#circleView)" transform="scale(-1, -1) translate(-80, -80)" />
+    <image width="80" height="80" xlink:href="<%= image_url(icon) %>" clip-path="url(#circleView)" />
   </svg>
 </div>

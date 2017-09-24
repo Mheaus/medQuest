@@ -13,7 +13,10 @@
     <p class="objective-decription-content mb-3"><%= objective.description  %></p>
     <% if !current_user.has_done_this?(objective) %>
       <%= link_to user_badge_user_objectives_path(@userbadge, objective_id: objective.id), method: :post, remote: true do %>
+      <div class="modal-content-icons d-flex justify-content-between">
         <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
+        <i class='fa fa-info-circle awe-info' ></i>
+      </div>
       <% end %>
     <% end %>
   </div>
