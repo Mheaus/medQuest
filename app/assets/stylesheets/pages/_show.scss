@@ -5,12 +5,20 @@
 
   #badges-cards {
     padding: 0 3%;
-    .accordion {
-      color: black;
+    #accordion {
       padding: 0;
-      height: 15vh;
+      color: black;
+      .accordion-toggle {
+        height: 14vh;
+        cursor: pointer;
+        color: black;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
       .badge-card-details {
-        padding: 4%;
+        padding: 6%;
         .badge-card-name {
           font-weight: normal;
           font-size: 20px;
@@ -18,20 +26,26 @@
       }
       .objective-undone {
         font-size: 3.125rem; /* 50/16 */
-        color: white;
+        color: #9f9f9f;
       }
 
       .objective-done {
         font-size: 3.125rem; /* 50/16 */
         color: $yellow !important;
       }
-
     }
-    .objective-decription {
-      color: black;
+    .accordion-content {
+      display: none;
       background-color: #fff;
       border-radius: 2px;
       border-left: 2px solid  #EEF7E3;
+      padding: 1.25rem; /* 20/16 */
+    }
+    .objective-decription {
+      color: black;
+      background-color: rgba(204, 204, 204, 0.3);
+      border-radius: 2px;
+      border-left: 2px solid rgb(159, 159, 159);
       padding: 1.25rem; /* 20/16 */
       &-content {
 
