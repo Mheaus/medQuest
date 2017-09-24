@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
   function createProgressElement(element){
     return new ProgressBar.Circle(element, {
       strokeWidth: 10,
