@@ -1,10 +1,17 @@
-<div class="bottom-view">
-  <div class="bottom-view-container d-none">
+<div class="bottom-view expanded">
+  <div class="bottom-view-container">
     <div class="container">
-      <p>Vos badges acquis</p>
-      <div class="bottom-view-badges-container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p id="badge-acquired-title">Vos badges acquis</p>
+        </div>
+      </div>
+      <div class="row bottom-view-badges-container ">
         <% @userbadges.each_with_index do |userbadge, index| %>
-          <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
+          <div class="col-4 mt-4 mb-5">
+            <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
+            <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
+          </div>
         <% end %>
       </div>
     </div>
