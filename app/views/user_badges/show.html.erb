@@ -10,7 +10,7 @@
         <div class='accordion-content'>
           <p> <%= objective.description %></p>
             <% if UserObjective.find_by(user_badge_id: @userbadge.id, objective_id: objective.id) == nil %>
-              <%= link_to user_badge_user_objectives_path(@userbadge, objective), method: :post do %>
+              <%= link_to user_badge_user_objectives_path(@userbadge, objective_id: objective), method: :post do %>
                 <button type="button" class="btn btn-primary">J'ai réalisé ce défi !</button>
               <% end %>
             <% end %>
