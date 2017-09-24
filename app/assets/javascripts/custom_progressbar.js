@@ -23,10 +23,30 @@ $(document).ready(function(){
     }, function() {
        progressElement.animate(progression);
     });
-  };
+  }
 
   $("[id*='badgeicon']").each(function(){
-    dataProgress = parseFloat($(this).parents('.badge-icon-container')[0].dataset.progress);
-    animateProgressElement(createProgressElement(this), dataProgress);
+    progressElement = $(this).parents('.badge-icon-container')[0].dataset.progress
+    if (progressElement != "") {
+      dataProgress = parseFloat(progressElement);
+      animateProgressElement(createProgressElement(this), dataProgress);
+    }
+  });
+
+  // -------- this one is for the slide down part --------
+  function achievementUnlocked(element){
+    return new ProgressBar.Circle(element, {
+      strokeWidth: 10,
+      color: '#ECD611',
+      trailWidth: 10
+    });
+  }
+
+  function setProgressDone(progressElement){
+    progressElement.set(1);
+  };
+
+  $("[class*='completed-achievements']").each(function(){
+    setProgressDone(achievementUnlocked(this));
   });
 });
