@@ -1,5 +1,5 @@
 .bottom-view {
-  background: $green;
+  background: #2bb8db;
   width: 100%;
   height: 40px;
   position: absolute;
@@ -22,7 +22,7 @@
 
 .bottom-view::before {
   content: "+";
-  background: $green;
+  background: #2bb8db;
   color: white;
   font-size: 23px;
   width: 46px;
