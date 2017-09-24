@@ -1,34 +1,33 @@
 #header-background {
-  background: linear-gradient(90deg, #89C443, #a5db62);
+  background: linear-gradient(90deg, #2bb8db, #94e7fc);
   height: 10rem;
   color: white;
   #title {
-    font-family: 'PT Serif', serif;
     margin-bottom: 0;
     font-size: 45px;
   }
   #username {
-    font-weight: bold;
+    font-weight: lighter;
     font-size: 15px;
   }
 }
 
 #badges-cards {
-  margin-top: -10vh;
+  margin-top: -8vh;
   position: relative;
-  padding: 5%;
+  padding: 3%;
   color: white;
+  p {
+    margin: 0;
+    font-weight: bold;
+    .badge-card-name {
+      font-size: 18px;
+    }
+  }
   .badge-card {
     border: solid 1px;
     border-radius: 5px;
-    background: no-repeat center/120% linear-gradient(90deg, #2bb8db, #94e7fc);
-    p {
-      margin: 0;
-      font-weight: bold;
-      .badge-card-name {
-        font-size: 18px;
-      }
-    }
+    background: no-repeat center/120% linear-gradient(90deg, #89C443, #a5db62);
     .progression {
       font-size: 12px;
     }
