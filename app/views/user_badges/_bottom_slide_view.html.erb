@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="row bottom-view-badges-container ">
-        <% @userbadges.each_with_index do |userbadge, index| %>
+        <% @completed_badges.each_with_index do |userbadge, index| %>
           <div class="col-4 mt-4 mb-5">
             <%= render 'icon_container', value: userbadge.badge.id, progression: nil, index: index %>
             <%= link_to "", user_badge_path(userbadge), class: "badge-show-link" %>
