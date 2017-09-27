@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="shortcut icon" href="<%= image_url "favicon.png" %>" type="image/x-icon">
-    <title>Riberaquest</title>
+    <title>medQuest</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,5 +12,6 @@
 
   <body>
     <%= yield %>
+    <link rel="javascript" href="http://localhost:35729/livereload.js">
   </body>
 </html>

@@ -1,0 +1,58 @@
+#badges-index {
+  #header-background {
+    background: #D5573B;
+    position: relative;
+    #medal {
+      position: absolute;
+      top: 20px;
+      right: -100px;
+    }
+  }
+
+  #badges-cards {
+    margin-top: -6vh;
+    position: relative;
+    padding: 3%;
+    .badge-card-name {
+      font-size: 17px;
+      font-weight: bold;
+    }
+    p {
+      line-height: 17px;
+      margin: 0;
+    }
+    .badge-card {
+      border: solid 1px #9f9f9f;
+      border-radius: 5px;
+      background-color: white;
+      .progression {
+        font-size: 12px;
+      }
+      .badge-icon-container {
+        padding: 2% 0;
+
+      }
+      &-show-link {
+        text-decoration: none;
+        z-index: 2;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        color: white;
+        justify-content: center;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+    #badge-new {
+      height: 12vh;
+      #plus {
+        color: #2bb8db;
+        font-size: 80px;
+      }
+    }
+  }
+}

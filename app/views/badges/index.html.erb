@@ -1,0 +1,48 @@
+<div class="container-fluid" id="badges-index">
+  <div class="row" id="header-background">
+    <div class="col-12 mb-5">
+      <h1 id="title">INDEX DES BADGES</h1>
+      <p>Liste des badges :</p>
+    </div>
+    <%= image_tag "medal.svg", height: "140%", id: "medal" %>
+  </div>
+
+  <div class="row d-sm-none" id="badges-cards">
+    <% @badges.each do |badge| %>
+      <div class="col-12 d-flex mb-2 justify-content-between badge-card">
+
+        <div class="d-flex flex-column justify-content-end mb-3">
+          <p class="badge-card-name"><%= badge.name %></p>
+        </div>
+
+        <div class="badge-icon-container d-flex align-items-center justify-content-center">
+          <svg width="80" height="80" id="badgeicon<%= badge.id %>" >
+              <defs>
+                  <clipPath id="circleView">
+                    <circle cx="40" cy="40" r="40" fill="#FFFFFF" /></circle>
+                  </clipPath>
+              </defs>
+            <image width="80" height="80" xlink:href="<%= image_url(badge.icon_name) %>" clip-path="url(#circleView)" transform="scale(-1, -1) translate(-80, -80)" /></image>
+          </svg>
+        </div>
+
+        <%= link_to "", badge_path(badge), class: "badge-card-show-link" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row d-none d-sm-block" id="badges-cards-sm">
+    <% @badges.each do |badge| %>
+      <div class="col-6 col-lg-4 d-flex mb-2 justify-content-between">
+        <div class="d-flex flex-column justify-content-end mb-3">
+          <p class=""><%= badge.name %></p>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <%= image_tag badge.icon_name %>
+        </div>
+        <%= link_to "", badge_path(badge), class: "badge-card-show-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
